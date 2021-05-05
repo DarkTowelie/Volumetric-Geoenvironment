@@ -1,0 +1,18 @@
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\bin\Debug\Volumetric Geoenvironment.exe.config
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\bin\Debug\Volumetric Geoenvironment.exe
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\bin\Debug\Volumetric Geoenvironment.pdb
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\MainWindow.g.cs
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\App.g.cs
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric Geoenvironment_MarkupCompile.cache
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric Geoenvironment_MarkupCompile.lref
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\MainWindow.baml
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric Geoenvironment.g.resources
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric_Geoenvironment.Properties.Resources.resources
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric Geoenvironment.csproj.GenerateResource.cache
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric Geoenvironment.csproj.CoreCompileInputs.cache
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric Geoenvironment.exe
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric Geoenvironment.pdb
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\App.baml
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\StaticResource\ResourceDictionary.baml
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric Geoenvironment.csprojAssemblyReference.cache
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\StaticResource\Styles.baml

@@ -1,0 +1,61 @@
+﻿<Window x:Class="Volumetric_Geoenvironment.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Volumetric_Geoenvironment"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="587" Width="962" MinWidth="600" MinHeight="450">
+    
+    <Grid Background="#FF1C1C1C">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="261*"/>
+            <RowDefinition Height="17*"/>
+        </Grid.RowDefinitions>
+        <TabControl Height="137" VerticalAlignment="Top" Background="#FF0A0A0A">
+            <TabItem x:Name="ti_SegyFile" Header="Файл" Margin="-2,-2,-63,0" Background="#FF2D2D30" Foreground="White">
+                <Grid Background="#FF2D2D30">
+                    <Button x:Name="mb_LoadSegy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="11,10,0,0" Height="75"  Cursor="Hand" Background="#FF1B1B1B" Foreground="White" BorderBrush="#FF00000E">
+                        <Grid>
+                            <Image Source="{StaticResource Segy3D}" Margin="10,3,10,21" />
+                            <TextBlock Text="Загрузить" Margin="6,50,10,6"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="mb_SegyInfo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="96,10,0,0" Height="75" Cursor="Hand" Background="#FF1B1B1B" Foreground="White">
+                        <Grid>
+                            <Image Source="{StaticResource Info}" Margin="10,3,10,21" />
+                            <TextBlock Text="Загрузить" Margin="6,50,10,6"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="mb_DeleteSelectedSegy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="180,10,0,0" Height="75" Cursor="Hand" Background="#FF1B1B1B" Foreground="White">
+                        <Grid>
+                            <Image Source="{StaticResource Delete}" Margin="10,3,10,21" />
+                            <TextBlock Text="Удалить" Margin="13,50,10,6"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="mb_DeleteAllSegy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="263,10,0,0" Height="75" Cursor="Hand" Background="#FF1B1B1B" Foreground="White">
+                        <Grid>
+                            <Image Source="{StaticResource DeleteAll}" Margin="10,3,10,21" />
+                            <TextBlock Text="Удалить все" Margin="3,50,2,6"/>
+                        </Grid>
+                    </Button>
+                    <Separator HorizontalAlignment="Left" Margin="306,-1,0,-4" Width="102" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                        <Separator.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Separator.RenderTransform>
+                    </Separator>
+                    <Label x:Name="l_Segy" Content="SEGY" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.447,1.5" Margin="159,85,0,-2" Foreground="White"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Двойной крайгинг" Margin="63,-2,-72,0" Foreground="White" Background="#FF2D2D30" >
+                <Grid Background="#FF2D2D30"/>
+            </TabItem>
+        </TabControl>
+        <StatusBar Grid.Row="1" Background="#FF007ACC"/>
+    </Grid>
+</Window>
