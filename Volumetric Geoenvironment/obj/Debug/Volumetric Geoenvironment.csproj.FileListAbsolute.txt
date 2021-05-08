@@ -15,4 +15,10 @@ C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvir
 C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\App.baml
 C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\StaticResource\ResourceDictionary.baml
 C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\Volumetric Geoenvironment.csprojAssemblyReference.cache
-C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\StaticResource\Styles.baml
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\UserControll\MainTabControll.g.cs
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\UserControll\MainTabControll.baml
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\UserControll\TI_File.g.cs
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\UserControll\TI_File.baml
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\UserControll\Ti_View.g.cs
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\UserControll\Ti_View.baml

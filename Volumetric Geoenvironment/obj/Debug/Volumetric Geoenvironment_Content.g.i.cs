@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("staticresource/icons/segy3d.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("volumetric_geoenvironment.png")]
 
 

@@ -5,5 +5,8 @@
     <BitmapImage x:Key="Info" UriSource="pack://application:,,,/StaticResource/icons/Info.ico"/>
     <BitmapImage x:Key="Delete" UriSource="pack://application:,,,/StaticResource/icons/Delete.ico"/>
     <BitmapImage x:Key="DeleteAll" UriSource="pack://application:,,,/StaticResource/icons/DeleteAll.ico"/>
+
+    <BitmapImage x:Key="PrTree" UriSource="pack://application:,,,/StaticResource/icons/PrTree.ico"/>
     
+    <BitmapImage x:Key="Logo" UriSource="pack://application:,,,/StaticResource/Logo.ico"/>
 </ResourceDictionary>
