@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\App.xaml
-5-643920161
+61486251819
 
-101538104053
-13-1505183044
-MainWindow.xaml;StaticResource\ResourceDictionary.xaml;UserControll\MainTabControll.xaml;UserControll\Ti_File.xaml;UserControll\Ti_View.xaml;
+11745012942
+15726460765
+MainWindow.xaml;StaticResource\ResourceDictionary.xaml;UserControls\MainWindow\MainTabControl.xaml;UserControls\MainWindow\Ti_File.xaml;UserControls\MainWindow\Ti_View.xaml;ReadSegy.xaml;
 
 False
 

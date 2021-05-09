@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Volumetric_Geoenvironment"
-        xmlns:UserControll="clr-namespace:Volumetric_Geoenvironment.UserControll"
+        xmlns:UserControls="clr-namespace:Volumetric_Geoenvironment.UserControls"
         mc:Ignorable="d"
         Height="587" Width="962" MinWidth="600" MinHeight="450" Icon="StaticResource/Logo.png">
 
@@ -14,7 +14,7 @@
             <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <UserControll:MainTabControll></UserControll:MainTabControll>
+        <UserControls:MainTabControl></UserControls:MainTabControl>
 
         <StatusBar x:Name="MainStatusBar" Grid.Row="2" Background="#FF007ACC"/>
     </Grid>

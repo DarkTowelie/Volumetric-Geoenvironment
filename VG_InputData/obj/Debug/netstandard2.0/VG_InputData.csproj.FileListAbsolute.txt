@@ -1,0 +1,9 @@
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\VG_InputData\bin\Debug\netstandard2.0\VG_InputData.deps.json
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\VG_InputData\bin\Debug\netstandard2.0\VG_InputData.dll
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\VG_InputData\bin\Debug\netstandard2.0\VG_InputData.pdb
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\VG_InputData\obj\Debug\netstandard2.0\VG_InputData.csprojAssemblyReference.cache
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\VG_InputData\obj\Debug\netstandard2.0\VG_InputData.AssemblyInfoInputs.cache
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\VG_InputData\obj\Debug\netstandard2.0\VG_InputData.AssemblyInfo.cs
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\VG_InputData\obj\Debug\netstandard2.0\VG_InputData.csproj.CoreCompileInputs.cache
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\VG_InputData\obj\Debug\netstandard2.0\VG_InputData.dll
+C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\VG_InputData\obj\Debug\netstandard2.0\VG_InputData.pdb

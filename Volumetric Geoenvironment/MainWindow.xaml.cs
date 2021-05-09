@@ -13,27 +13,35 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Volumetric_Geoenvironment.ControlConstructors;
+using Volumetric_Geoenvironment.UserControls;
+using VG_InputData.SEGY;
+using System.ComponentModel;
 
 namespace Volumetric_Geoenvironment
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    
     public struct ControllVisibility
     {
         public Visibility PrTree;
-
     }
 
     public partial class MainWindow : Window
     {
+        public static List<SEGY_3D> segy3D = new List<SEGY_3D>();
+        int progress = 0;
+        string seg_file_name = "E:\\Work\\Данные\\Проект для тестирования\\Fsrd_(-40).sgy";
+        BackgroundWorker bw = new BackgroundWorker();
+
         public static ControllVisibility controllVisibility = new ControllVisibility();
         public static TreeView tv_ProjectTree = new TreeView();
         public static Border b_ProjectTree = new Border();
 
         public MainWindow()
         {
+            bw.WorkerSupportsCancellation = true;
+            bw.WorkerReportsProgress = true;
+            segy3D.Add(new SEGY_3D(ref progress, false, seg_file_name,
+                        -9999, null, null, false,
+                            "ms", "ms", ref bw));
             InitializeComponent();
             
             PrTree.Border();

@@ -5,16 +5,42 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volumetric Geoenvironment", "Volumetric Geoenvironment\Volumetric Geoenvironment.csproj", "{B2E6F216-16F5-4271-A412-49FE3A52D792}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VG_InputData", "VG_InputData\VG_InputData.csproj", "{FC9A6668-17AA-4398-B7AE-CDD8364242A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Debug|x64.Build.0 = Debug|Any CPU
+		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Debug|x86.Build.0 = Debug|Any CPU
 		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Release|x64.ActiveCfg = Release|Any CPU
+		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Release|x64.Build.0 = Release|Any CPU
+		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Release|x86.ActiveCfg = Release|Any CPU
+		{B2E6F216-16F5-4271-A412-49FE3A52D792}.Release|x86.Build.0 = Release|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Debug|x64.Build.0 = Debug|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Debug|x86.Build.0 = Debug|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Release|x64.ActiveCfg = Release|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Release|x64.Build.0 = Release|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Release|x86.ActiveCfg = Release|Any CPU
+		{FC9A6668-17AA-4398-B7AE-CDD8364242A7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

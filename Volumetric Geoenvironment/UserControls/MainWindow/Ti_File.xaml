@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Volumetric_Geoenvironment.UserControls.TI_File"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Volumetric_Geoenvironment.UserControls"
+             mc:Ignorable="d" d:DesignWidth="800" Height="112.777">
+    <Grid Background="#FF2D2D30">
+        <Button x:Name="mb_LoadSegy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="8,10,0,0" Height="75" Cursor="Hand" Background="#FF1B1B1B" Foreground="White">
+            <Grid>
+                <Image Source="{StaticResource Segy3D}" Margin="9,3,11,21" />
+                <TextBlock x:Name="l_SEGY" Text="SEGY 3D" Margin="12,50,4,6"/>
+            </Grid>
+        </Button>
+
+        <Button x:Name="mb_LoadGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="90,10,0,0" Height="75" Cursor="Hand" Background="#FF1B1B1B" Foreground="White">
+            <Grid>
+                <Image Source="{StaticResource Grid}" Margin="0,0,0,21" />
+                <TextBlock Text="Грид" Margin="21,50,23,6"/>
+            </Grid>
+        </Button>
+        
+        <Button x:Name="mb_LoadWData" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="175,10,0,0" Height="75" Cursor="Hand" Background="#FF1B1B1B" Foreground="White">
+            <Grid>
+                <Image Source="{StaticResource Well}" Margin="10,3,10,21" />
+                <TextBlock Text="ГИС" Margin="22,50,20,6"/>
+            </Grid>
+        </Button>
+        
+        <Label x:Name="l_Segy" Content="Загрузка данных" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.447,1.5" Margin="69,85,0,0" Foreground="White"/>
+
+        <Separator HorizontalAlignment="Left" Margin="210,-5,0,0" Width="102" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+
+        <Button x:Name="mb_Info" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="272,10,0,0" Height="75" Cursor="Hand" Background="#FF1B1B1B" Foreground="White">
+            <Grid>
+                <Image Source="{StaticResource Info}" Margin="10,3,10,21" />
+                <TextBlock Text="Свойства" Margin="6,50,10,6"/>
+            </Grid>
+        </Button>
+        <Button x:Name="mb_DeleteSelected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="356,10,0,0" Height="75" Cursor="Hand" Background="#FF1B1B1B" Foreground="White">
+            <Grid>
+                <Image Source="{StaticResource Delete}" Margin="10,3,10,21" />
+                <TextBlock Text="Удалить" Margin="13,50,10,6"/>
+            </Grid>
+        </Button>
+        <Button x:Name="mb_DeleteAll" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="439,10,0,0" Height="75" Cursor="Hand" Background="#FF1B1B1B" Foreground="White">
+            <Grid>
+                <Image Source="{StaticResource DeleteAll}" Margin="10,3,10,21" />
+                <TextBlock Text="Удалить все" Margin="3,50,2,6"/>
+            </Grid>
+        </Button>
+
+        <Label x:Name="l_Segy_Copy" Content="Управление данными" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.447,1.5" Margin="331,85,0,0" Foreground="White"/>
+    </Grid>
+</UserControl>

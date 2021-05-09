@@ -56,14 +56,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ControlConstructors\PrTree.cs" />
-    <Compile Include="UserControll\MainTabControll.xaml.cs">
-      <DependentUpon>MainTabControll.xaml</DependentUpon>
+    <Compile Include="UserControls\MainWindow\MainTabControl.xaml.cs">
+      <DependentUpon>MainTabControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControll\Ti_File.xaml.cs">
+    <Compile Include="UserControls\MainWindow\Ti_File.xaml.cs">
       <DependentUpon>Ti_File.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControll\Ti_View.xaml.cs">
+    <Compile Include="UserControls\MainWindow\Ti_View.xaml.cs">
       <DependentUpon>Ti_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReadSegy.xaml.cs">
+      <DependentUpon>ReadSegy.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -81,15 +84,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControll\MainTabControll.xaml">
+    <Page Include="UserControls\MainWindow\MainTabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControll\Ti_File.xaml">
+    <Page Include="UserControls\MainWindow\Ti_File.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControll\Ti_View.xaml">
+    <Page Include="UserControls\MainWindow\Ti_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReadSegy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,6 +147,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="StaticResource\icons\PrTree.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StaticResource\icons\Grid.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StaticResource\icons\Well.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VG_InputData\VG_InputData.csproj">
+      <Project>{fc9a6668-17aa-4398-b7ae-cdd8364242a7}</Project>
+      <Name>VG_InputData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\ReadSegy\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
