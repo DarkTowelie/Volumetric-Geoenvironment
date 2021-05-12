@@ -112,7 +112,7 @@ namespace VG_InputData.SEGY
             return buffer;
 
         }
-        public static byte[] GetRevBytesFromHeaderBuffer(byte[] digidal_header_buffer, int[,] Template, int current_position)
+        public static byte[] GetRevBytes(byte[] digidal_header_buffer, int[,] Template, int current_position)
         {
             int buffer_size = Template[current_position, 1];
             byte[] buffer = new byte[buffer_size];
@@ -121,15 +121,6 @@ namespace VG_InputData.SEGY
                 buffer[buffer_size - (i + 1)] = digidal_header_buffer[Template[current_position, 0] + i];
             }
             return buffer;
-        }
-        public static byte[] GetBytesFromBuffer(byte[] buffer, int position, int num_of_reading_samples)
-        {
-            byte[] extracted_bytes = new byte[num_of_reading_samples];
-            for (int i = 0; i < num_of_reading_samples; i++)
-            {
-                extracted_bytes[i] = buffer[position + i];
-            }
-            return extracted_bytes;
         }
     }
 }

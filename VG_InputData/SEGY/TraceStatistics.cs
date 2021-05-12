@@ -5,7 +5,7 @@ using System.Text;
 
 namespace VG_InputData.SEGY
 {
-    public class SegyStatistics
+    public class TraceStatistics
     {
         public int MaxInline { get; private set; }
         public int MinInline { get; private set; }
@@ -25,7 +25,7 @@ namespace VG_InputData.SEGY
 
         public int IrrelevantCount { get; private set; }
 
-        public SegyStatistics()
+        public TraceStatistics()
         {
             MaxInline = -2147483648;
             MinInline = 2147483647;
@@ -46,7 +46,7 @@ namespace VG_InputData.SEGY
             IrrelevantCount = 0;
         }
 
-        public void CalcCoordStats(Template template, byte[] TraceHeaderBuf, TraceHeaders traceHeader, ref bool Error, ref string ErrorMessage)
+        public void UpdateTraceStat(Template template, TraceHeaders traceHeader, ref bool Error, ref string ErrorMessage)
         {
             for (int j = 0; j < template.TraceHeader.GetLength(0); j++)
             {
@@ -55,8 +55,6 @@ namespace VG_InputData.SEGY
                     case (1):
                         try
                         {
-                            byte[] Buf = DataTransform.GetRevBytesFromHeaderBuffer(TraceHeaderBuf, template.TraceHeader, j);
-                            traceHeader.Inline = DataTransform.ByteToInt(Buf);
                             if (MaxInline < traceHeader.Inline)
                                 MaxInline = traceHeader.Inline;
 
@@ -68,14 +66,12 @@ namespace VG_InputData.SEGY
                         catch
                         {
                             Error = true;
-                            ErrorMessage = "Ошибка записи Inline трасс (class SEG_Y, digital_trace_header, case 1).";
+                            ErrorMessage = "Ошибка расчета статистики трасс (CalcTraceStat, case 1).";
                             return;
                         }
                     case (2):
                         try
                         {
-                            byte[] Buf = DataTransform.GetRevBytesFromHeaderBuffer(TraceHeaderBuf, template.TraceHeader, j);
-                            traceHeader.Crossline = DataTransform.ByteToInt(Buf);
                             if (MaxCrossline < traceHeader.Crossline)
                                 MaxCrossline = traceHeader.Crossline;
 
@@ -87,14 +83,12 @@ namespace VG_InputData.SEGY
                         catch
                         {
                             Error = true;
-                            ErrorMessage = "Ошибка записи Crossline трасс (class SEG_Y, digital_trace_header, case 2)";
+                            ErrorMessage = "Ошибка расчета статистики трасс (CalcTraceStat, case 2).";
                             return;
                         }
                     case (3):
                         try
                         {
-                            byte[] Buf = DataTransform.GetRevBytesFromHeaderBuffer(TraceHeaderBuf, template.TraceHeader, j);
-                            traceHeader.X = DataTransform.ByteToInt(Buf);
                             if (MaxX < traceHeader.X)
                                 MaxX = traceHeader.X;
 
@@ -106,14 +100,12 @@ namespace VG_InputData.SEGY
                         catch
                         {
                             Error = true;
-                            ErrorMessage = "Ошибка записи координат X трасс (class SEG_Y, digital_trace_header, case 3)";
+                            ErrorMessage = "Ошибка расчета статистики трасс (CalcTraceStat, case 3)."; ;
                             return;
                         }
                     case (4):
                         try
                         {
-                            byte[] Buf = DataTransform.GetRevBytesFromHeaderBuffer(TraceHeaderBuf, template.TraceHeader, j);
-                            traceHeader.Y = DataTransform.ByteToInt(Buf);
                             if (MaxY < traceHeader.Y)
                                 MaxY = traceHeader.Y;
 
@@ -125,36 +117,36 @@ namespace VG_InputData.SEGY
                         catch
                         {
                             Error = true;
-                            ErrorMessage = "Ошибка записи координат Y трасс (class SEG_Y, digital_trace_header, case 4)";
+                            ErrorMessage = "Ошибка расчета статистики трасс (CalcTraceStat, case 4)."; ;
                             return;
                         }
                 }
             }
         }
-        public void FastCalsAmplStats(long[] SampleForRelCheck, FileHeaders fileHeaders, FileStream stream, TraceHeaders traceHeader, TraceGeneralInfo GenInf, double absenceCode, ref bool Error, ref string ErrorMessage)
+        public void FastCalsAmplStats(long[] sampleForRelCheck, FileHeaders fileHeaders, FileStream stream, ref TraceHeaders traceHeader, TraceInfo traceInfo, double absenceCode, ref bool Error, ref string ErrorMessage)
         {
-            long TraceShift = 0;
-            byte[] Buf = new byte[4];
-            double readed_sample;
-            for (int j = 0; j < SampleForRelCheck.GetLength(0); j++)
+            long traceShift = 0;
+            byte[] sampleBuf = new byte[4];
+            double readedSample;
+            for (int j = 0; j < sampleForRelCheck.GetLength(0); j++)
             {
                 try
                 {
-                    stream.Seek(SampleForRelCheck[j] - fileHeaders.SampleSize, SeekOrigin.Current);
-                    stream.Read(Buf, 0, Buf.Length);
+                    stream.Seek(sampleForRelCheck[j] - fileHeaders.SampleSize, SeekOrigin.Current);
+                    stream.Read(sampleBuf, 0, sampleBuf.Length);
                 }
                 catch
                 {
                     Error = true;
-                    ErrorMessage = "Ошибка чтения трасс при проверке на актуальность (SegyStatistics, быстрая проверка на актуалность)";
+                    ErrorMessage = "Ошибка чтения трасс при проверке на актуальность (FastCalsAmplStats)";
                     return;
                 }
 
                 try
                 {
-                    readed_sample = DataTransform.ByteToDouble(fileHeaders.FormatCode, Buf);
-                    TraceShift += SampleForRelCheck[j];
-                    if (readed_sample != absenceCode)
+                    readedSample = DataTransform.ByteToDouble(fileHeaders.FormatCode, sampleBuf);
+                    traceShift += sampleForRelCheck[j];
+                    if (readedSample != absenceCode)
                     {
                         traceHeader.Relevanvce = true;
                         break;
@@ -163,7 +155,7 @@ namespace VG_InputData.SEGY
                 catch
                 {
                     Error = true;
-                    ErrorMessage = "Ошибка конвертации отсчета при проверке на актуальность (class SEG_Y, digital_trace_header, быстрая проверка на актуалность)";
+                    ErrorMessage = "Ошибка конвертации отсчета при проверке на актуальность (FastCalsAmplStats)";
                     return;
                 }
             }
@@ -172,7 +164,7 @@ namespace VG_InputData.SEGY
                 IrrelevantCount++;
             try
             {
-                stream.Seek(GenInf.TrLength - TraceShift, SeekOrigin.Current);
+                stream.Seek(traceInfo.TraceByteLength - traceShift, SeekOrigin.Current);
             }
             catch
             {
@@ -181,44 +173,40 @@ namespace VG_InputData.SEGY
                 return;
             }
         }
-        public void CalcAmplStats(FileHeaders fileHeaders, FileStream stream, TraceHeaders traceHeader, TraceGeneralInfo GenInf, double absenceCode, ref bool Error, ref string ErrorMessage)
+        public void CalcAmplStats(FileHeaders fileHeaders, FileStream stream, ref TraceHeaders traceHeader, TraceInfo GenInf, double absenceCode, ref bool Error, ref string ErrorMessage)
         {
-            byte[] Buf = new byte[4];
-            byte[] trace_buffer = new byte[GenInf.TrLength];
-            double readed_sample;
+            byte[] sampleBuf = new byte[4];
+            byte[] traceBuf = new byte[GenInf.TraceByteLength];
+            double readedSample;
             try
             {
-                stream.Read(trace_buffer, 0, trace_buffer.Length);
+                stream.Read(traceBuf, 0, traceBuf.Length);
             }
             catch
             {
                 Error = true;
-                ErrorMessage = "Ошибка чтения данных трасс из файла (class SEG_Y, digital_trace_header, полная проверка на актуальность)";
+                ErrorMessage = "Ошибка чтения данных трасс из файла (CalcAmplStats)";
                 return;
             }
 
             try
             {
-                for (int j = 0; j < GenInf.TrLength;)
+                for (int j = 0; j < GenInf.TraceByteLength;)
                 {
-                    for (int k = 0; k < fileHeaders.SampleSize; k++)
-                    {
-                        Buf[k] = trace_buffer[j + k];
-                    }
+                    Array.Copy(traceBuf, j, sampleBuf, 0, fileHeaders.SampleSize);
+                    readedSample = DataTransform.ByteToDouble(fileHeaders.FormatCode, sampleBuf);
 
-                    readed_sample = DataTransform.ByteToDouble(fileHeaders.FormatCode, Buf);
-
-                    if (traceHeader.Relevanvce == false)
-                        if (readed_sample != absenceCode)
+                    if (!traceHeader.Relevanvce)
+                        if (readedSample != absenceCode)
                         {
                             traceHeader.Relevanvce = true;
                         }
 
-                    if (readed_sample > MaxAmpl)
-                        MaxAmpl = readed_sample;
+                    if (readedSample > MaxAmpl)
+                        MaxAmpl = readedSample;
 
-                    if (readed_sample < MinAmpl)
-                        MinAmpl = readed_sample;
+                    if (readedSample < MinAmpl)
+                        MinAmpl = readedSample;
 
                     j += fileHeaders.SampleSize;
                 }

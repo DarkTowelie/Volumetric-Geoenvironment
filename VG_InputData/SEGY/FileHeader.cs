@@ -26,19 +26,19 @@ namespace VG_InputData.SEGY
             MeasurementSystem = 0;
 
             byte[] Buf;
-            byte[] DigidalHeaderBuf = new byte[400];
+            byte[] FileHeaderBuf = new byte[400];
 
             Error = false;
             ErrorMessage = null;
             try
             {
                 SEGY.Seek(3200, SeekOrigin.Begin);
-                SEGY.Read(DigidalHeaderBuf, 0, DigidalHeaderBuf.Length);
+                SEGY.Read(FileHeaderBuf, 0, FileHeaderBuf.Length);
             }
             catch
             {
                 Error = true;
-                ErrorMessage = "Ошибка считывания цифрового заголовка SEGY в буфер.";
+                ErrorMessage = "Ошибка считывания цифрового заголовка SEGY в буфер (FileHeaders).";
                 return;
             }
 
@@ -49,7 +49,7 @@ namespace VG_InputData.SEGY
                     case (1):
                         try
                         {
-                            Buf = DataTransform.GetRevBytesFromHeaderBuffer(DigidalHeaderBuf, template.FileHeader, i);
+                            Buf = DataTransform.GetRevBytes(FileHeaderBuf, template.FileHeader, i);
                             InlineCount = DataTransform.ByteToInt(Buf);
                             break;
                         }
@@ -63,7 +63,7 @@ namespace VG_InputData.SEGY
                     case (2):
                         try
                         {
-                            Buf = DataTransform.GetRevBytesFromHeaderBuffer(DigidalHeaderBuf, template.FileHeader, i);
+                            Buf = DataTransform.GetRevBytes(FileHeaderBuf, template.FileHeader, i);
                             CrosslineCount = DataTransform.ByteToInt(Buf);
                             break;
                         }
@@ -77,7 +77,7 @@ namespace VG_InputData.SEGY
                     case (3):
                         try
                         {
-                            Buf = DataTransform.GetRevBytesFromHeaderBuffer(DigidalHeaderBuf, template.FileHeader, i);
+                            Buf = DataTransform.GetRevBytes(FileHeaderBuf, template.FileHeader, i);
                             TimeStep = DataTransform.ByteToInt(Buf);
                             break;
                         }
@@ -91,7 +91,7 @@ namespace VG_InputData.SEGY
                     case (4):
                         try
                         {
-                            Buf = DataTransform.GetRevBytesFromHeaderBuffer(DigidalHeaderBuf, template.FileHeader, i);
+                            Buf = DataTransform.GetRevBytes(FileHeaderBuf, template.FileHeader, i);
                             SamplesCount = DataTransform.ByteToInt(Buf);
                             break;
                         }
@@ -105,7 +105,7 @@ namespace VG_InputData.SEGY
                     case (5):
                         try
                         {
-                            Buf = DataTransform.GetRevBytesFromHeaderBuffer(DigidalHeaderBuf, template.FileHeader, i);
+                            Buf = DataTransform.GetRevBytes(FileHeaderBuf, template.FileHeader, i);
                             FormatCode = DataTransform.ByteToInt(Buf);
                             break;
                         }
@@ -119,7 +119,7 @@ namespace VG_InputData.SEGY
                     case (6):
                         try
                         {
-                            Buf = DataTransform.GetRevBytesFromHeaderBuffer(DigidalHeaderBuf, template.FileHeader, i);
+                            Buf = DataTransform.GetRevBytes(FileHeaderBuf, template.FileHeader, i);
                             MeasurementSystem = DataTransform.ByteToInt(Buf);
                             break;
                         }

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\obj\Debug\
+C:\Users\valer\Desktop\For Cloning\Volumetric-Geoenvironment\Volumetric Geoenvironment\obj\Debug\
 Volumetric_Geoenvironment
 none
 false
 DEBUG;TRACE
-C:\Users\valer\Desktop\For Cloning\Volumetric Geoenvironment\Volumetric Geoenvironment\App.xaml
+C:\Users\valer\Desktop\For Cloning\Volumetric-Geoenvironment\Volumetric Geoenvironment\App.xaml
 61486251819
 
 101587372309
-15726460765
+18464059019
 MainWindow.xaml;StaticResource\ResourceDictionary.xaml;UserControls\MainWindow\MainTabControl.xaml;UserControls\MainWindow\Ti_File.xaml;UserControls\MainWindow\Ti_View.xaml;ReadSegy.xaml;
 
 False

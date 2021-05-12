@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vT6O2t8t0KWR+GDjnW2YHakyxPwcG53bYSRlk4d+HskRaclk4Mzd8v9z7II+k3u3m6yAPUl/QFOIlIVXRGkWTA==",
+  "dgSpecHash": "3YLZPobyuV0dO24mPt4JFjaEP4nrrkDyWUNt9soQUepGyGnJiWpwxlvIKL5jvTLCDTcDkVLodBInHemJrdeLVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric Geoenvironment\\VG_InputData\\VG_InputData.csproj",
+  "projectFilePath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric-Geoenvironment\\VG_InputData\\VG_InputData.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\valer\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
+    "C:\\Users\\valer\\.nuget\\packages\\exceldatareader.dataset\\3.6.0\\exceldatareader.dataset.3.6.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],

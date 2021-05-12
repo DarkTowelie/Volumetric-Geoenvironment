@@ -16,6 +16,7 @@ using Volumetric_Geoenvironment.ControlConstructors;
 using Volumetric_Geoenvironment.UserControls;
 using VG_InputData.SEGY;
 using System.ComponentModel;
+using VG_InputData.EXCEL.Well_logging;
 
 namespace Volumetric_Geoenvironment
 {
@@ -26,10 +27,8 @@ namespace Volumetric_Geoenvironment
 
     public partial class MainWindow : Window
     {
-        public static List<SEGY_3D> segy3D = new List<SEGY_3D>();
-        int progress = 0;
-        string seg_file_name = "E:\\Work\\Данные\\Проект для тестирования\\Fsrd_(-40).sgy";
-        BackgroundWorker bw = new BackgroundWorker();
+        string segyPath = "E:/Work/Данные/Проект для тестирования/Fsrd_(-40).sgy";
+        int pr = 0;
 
         public static ControllVisibility controllVisibility = new ControllVisibility();
         public static TreeView tv_ProjectTree = new TreeView();
@@ -37,13 +36,12 @@ namespace Volumetric_Geoenvironment
 
         public MainWindow()
         {
-            bw.WorkerSupportsCancellation = true;
+            BackgroundWorker bw = new BackgroundWorker();
             bw.WorkerReportsProgress = true;
-            segy3D.Add(new SEGY_3D(ref progress, false, seg_file_name,
-                        -9999, null, null, false,
-                            "ms", "ms", ref bw));
+            SEGY_3D seg = new SEGY_3D(ref pr, false, segyPath, 0, null, null, Metric.MS, Metric.MKS, ref bw);
+            ExcelData wellLog = new ExcelData("E:\\Work\\Данные\\Проект для тестирования\\Фес_по_срезам.xlsx", "ANGK", -999);
             InitializeComponent();
-            
+
             PrTree.Border();
             PrTree.TreeView();
             b_ProjectTree.Child = tv_ProjectTree;

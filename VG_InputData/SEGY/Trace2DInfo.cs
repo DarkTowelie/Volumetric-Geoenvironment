@@ -13,6 +13,7 @@ namespace VG_InputData.SEGY
         public bool[,] Relevance { get; private set; }
         public double StepX { get; private set; }
         public double StepY { get; private set; }
+
         public Trace2DInfo()
         {
             Inline = null;
@@ -21,8 +22,7 @@ namespace VG_InputData.SEGY
             Y = null;
             Relevance = null;
         }
-
-        public Trace2DInfo(FileHeaders fileHeaders, SegyStatistics SegyStat, TraceHeaders[] traceHeaders, ref bool Error, ref string ErrorMessage)
+        public Trace2DInfo(FileHeaders fileHeaders, TraceStatistics traceStat, TraceHeaders[] traceHeaders, ref bool Error, ref string ErrorMessage)
         {
             Inline = new int[fileHeaders.InlineCount];
             Crossline = new int[fileHeaders.CrosslineCount];
@@ -32,13 +32,13 @@ namespace VG_InputData.SEGY
             
             try
             {
-                Inline[Inline.GetLength(0) - 1] = SegyStat.MinInline;
+                Inline[Inline.GetLength(0) - 1] = traceStat.MinInline;
                 for (int i = Inline.GetLength(0) - 2; i >= 0; i--)
                 {
                     Inline[i] = Inline[i + 1] + 1;
                 }
 
-                Crossline[0] = SegyStat.MinCrossline;
+                Crossline[0] = traceStat.MinCrossline;
                 for (int i = 1; i < Crossline.GetLength(0); i++)
                 {
                     Crossline[i] = Crossline[i - 1] + 1;
@@ -46,11 +46,11 @@ namespace VG_InputData.SEGY
 
                 for (int i = 0; i < traceHeaders.Length; i++)
                 {
-                    int first_index = fileHeaders.InlineCount - traceHeaders[i].Inline + SegyStat.MinInline - 1;
-                    int second_index = traceHeaders[i].Crossline - SegyStat.MinCrossline;
-                    X[first_index, second_index] = traceHeaders[i].X;
-                    Y[first_index, second_index] = traceHeaders[i].Y;
-                    Relevance[first_index, second_index] = traceHeaders[i].Relevanvce;
+                    int firstIndex = fileHeaders.InlineCount - traceHeaders[i].Inline + traceStat.MinInline - 1;
+                    int secondIndex = traceHeaders[i].Crossline - traceStat.MinCrossline;
+                    X[firstIndex, secondIndex] = traceHeaders[i].X;
+                    Y[firstIndex, secondIndex] = traceHeaders[i].Y;
+                    Relevance[firstIndex, secondIndex] = traceHeaders[i].Relevanvce;
                 }
 
                 StepX= Math.Abs(X[0, 0] - X[0, 1]);
@@ -59,7 +59,7 @@ namespace VG_InputData.SEGY
             catch
             {
                 Error = true;
-                ErrorMessage = "Ошибка структуризации данных (class SEG_Y, digital_trace_header)";
+                ErrorMessage = "Ошибка структуризации данных (Trace2DInfo)";
                 return;
             }
         }

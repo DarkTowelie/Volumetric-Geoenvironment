@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric Geoenvironment\\VG_InputData\\VG_InputData.csproj": {}
+    "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric-Geoenvironment\\VG_InputData\\VG_InputData.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric Geoenvironment\\VG_InputData\\VG_InputData.csproj": {
+    "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric-Geoenvironment\\VG_InputData\\VG_InputData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric Geoenvironment\\VG_InputData\\VG_InputData.csproj",
+        "projectUniqueName": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric-Geoenvironment\\VG_InputData\\VG_InputData.csproj",
         "projectName": "VG_InputData",
-        "projectPath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric Geoenvironment\\VG_InputData\\VG_InputData.csproj",
+        "projectPath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric-Geoenvironment\\VG_InputData\\VG_InputData.csproj",
         "packagesPath": "C:\\Users\\valer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric Geoenvironment\\VG_InputData\\obj\\",
+        "outputPath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric-Geoenvironment\\VG_InputData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Microsoft\\Xamarin\\NuGet\\",
@@ -45,6 +45,14 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "ExcelDataReader": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "ExcelDataReader.DataSet": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

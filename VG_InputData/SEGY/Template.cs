@@ -10,12 +10,12 @@
         public bool Error { get; }
         public string ErrorMessage { get; }
 
-        public Template(int[,] new_file_header_template, int[,] new_trace_header_template, string sample_rate_metric, string start_time_metric)
+        public Template(int[,] fileHeaderTemp, int[,] traceHeadTemp, Metric sampleRateMetric, Metric startTimeMetric)
         {
-            //Если задаваемый шаблон не заполнен, задать шаблон по умолчанию ("TGT_3D_kingd (109)")
+            //Если шаблон не заполнен, задать шаблон по умолчанию ("TGT_3D_kingd (109)")
             Error = false;
             ErrorMessage = null;
-            if (new_file_header_template == null || new_trace_header_template == null)
+            if (fileHeaderTemp == null || traceHeadTemp == null)
             {
                 try
                 {
@@ -57,49 +57,49 @@
             {
                 try
                 {
-                    FileHeader = new int[new_file_header_template.GetLength(0), new_file_header_template.GetLength(1) + 1];
-                    TraceHeader = new int[new_trace_header_template.GetLength(0), new_trace_header_template.GetLength(1) + 1];
+                    FileHeader = new int[fileHeaderTemp.GetLength(0), fileHeaderTemp.GetLength(1) + 1];
+                    TraceHeader = new int[traceHeadTemp.GetLength(0), traceHeadTemp.GetLength(1) + 1];
                     SampleRateDevider = 0;
                     StartTimeDevider = 0;
 
-                    for (int i = 0; i < new_file_header_template.GetLength(0); i++)
+                    for (int i = 0; i < fileHeaderTemp.GetLength(0); i++)
                     {
-                        for (int j = 0; j < new_file_header_template.GetLength(1); j++)
+                        for (int j = 0; j < fileHeaderTemp.GetLength(1); j++)
                         {
-                            FileHeader[i, j] = new_file_header_template[i, j];
+                            FileHeader[i, j] = fileHeaderTemp[i, j];
                         }
                     }
 
-                    for (int i = 0; i < new_trace_header_template.GetLength(0); i++)
+                    for (int i = 0; i < traceHeadTemp.GetLength(0); i++)
                     {
-                        for (int j = 0; j < new_trace_header_template.GetLength(1); j++)
+                        for (int j = 0; j < traceHeadTemp.GetLength(1); j++)
                         {
-                            TraceHeader[i, j] = new_trace_header_template[i, j];
+                            TraceHeader[i, j] = traceHeadTemp[i, j];
                         }
                     }
 
-                    switch (sample_rate_metric)
+                    switch (sampleRateMetric)
                     {
-                        case ("mks"):
+                        case (Metric.MKS):
                             SampleRateDevider = 1000;
                             break;
-                        case ("ms"):
+                        case (Metric.MS):
                             SampleRateDevider = 1;
                             break;
-                        case ("s"):
+                        case (Metric.S):
                             SampleRateDevider = 0.001;
                             break;
                     }
 
-                    switch (start_time_metric)
+                    switch (startTimeMetric)
                     {
-                        case ("mks"):
+                        case (Metric.MKS):
                             StartTimeDevider = 1000;
                             break;
-                        case ("ms"):
+                        case (Metric.MS):
                             StartTimeDevider = 1;
                             break;
-                        case ("s"):
+                        case (Metric.S):
                             StartTimeDevider = 0.001;
                             break;
                     }

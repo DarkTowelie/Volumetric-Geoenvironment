@@ -2,6 +2,27 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "ExcelDataReader/3.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelDataReader.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelDataReader.dll": {}
+        }
+      },
+      "ExcelDataReader.DataSet/3.6.0": {
+        "type": "package",
+        "dependencies": {
+          "ExcelDataReader": "3.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -29,6 +50,49 @@
     }
   },
   "libraries": {
+    "ExcelDataReader/3.6.0": {
+      "sha512": "eXyxTwG7EEWpgQX3juZ2KcndqTqm/ydx9GXS2lUiMJU54U4h5eXdygRtVgINv0t60ezPWEb+lL7uM7Q+wm5BBA==",
+      "type": "package",
+      "path": "exceldatareader/3.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "exceldatareader.3.6.0.nupkg.sha512",
+        "exceldatareader.nuspec",
+        "lib/net20/ExcelDataReader.dll",
+        "lib/net20/ExcelDataReader.pdb",
+        "lib/net20/ExcelDataReader.xml",
+        "lib/net45/ExcelDataReader.dll",
+        "lib/net45/ExcelDataReader.pdb",
+        "lib/net45/ExcelDataReader.xml",
+        "lib/netstandard1.3/ExcelDataReader.dll",
+        "lib/netstandard1.3/ExcelDataReader.pdb",
+        "lib/netstandard1.3/ExcelDataReader.xml",
+        "lib/netstandard2.0/ExcelDataReader.dll",
+        "lib/netstandard2.0/ExcelDataReader.pdb",
+        "lib/netstandard2.0/ExcelDataReader.xml"
+      ]
+    },
+    "ExcelDataReader.DataSet/3.6.0": {
+      "sha512": "miW3sWmPXnLM38YadRIfnhL4W4QZajpS6Q/OqsOpFJU5ct8h+M/fMpbGMm5INtsMP0Y1k0WK0stIfSW3RP31Xg==",
+      "type": "package",
+      "path": "exceldatareader.dataset/3.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "exceldatareader.dataset.3.6.0.nupkg.sha512",
+        "exceldatareader.dataset.nuspec",
+        "lib/net20/ExcelDataReader.DataSet.dll",
+        "lib/net20/ExcelDataReader.DataSet.pdb",
+        "lib/net20/ExcelDataReader.DataSet.xml",
+        "lib/net35/ExcelDataReader.DataSet.dll",
+        "lib/net35/ExcelDataReader.DataSet.pdb",
+        "lib/net35/ExcelDataReader.DataSet.xml",
+        "lib/netstandard2.0/ExcelDataReader.DataSet.dll",
+        "lib/netstandard2.0/ExcelDataReader.DataSet.pdb",
+        "lib/netstandard2.0/ExcelDataReader.DataSet.xml"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -175,6 +239,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "ExcelDataReader >= 3.6.0",
+      "ExcelDataReader.DataSet >= 3.6.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -186,11 +252,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric Geoenvironment\\VG_InputData\\VG_InputData.csproj",
+      "projectUniqueName": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric-Geoenvironment\\VG_InputData\\VG_InputData.csproj",
       "projectName": "VG_InputData",
-      "projectPath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric Geoenvironment\\VG_InputData\\VG_InputData.csproj",
+      "projectPath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric-Geoenvironment\\VG_InputData\\VG_InputData.csproj",
       "packagesPath": "C:\\Users\\valer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric Geoenvironment\\VG_InputData\\obj\\",
+      "outputPath": "C:\\Users\\valer\\Desktop\\For Cloning\\Volumetric-Geoenvironment\\VG_InputData\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Microsoft\\Xamarin\\NuGet\\",
@@ -224,6 +290,14 @@
       "netstandard2.0": {
         "targetAlias": "netstandard2.0",
         "dependencies": {
+          "ExcelDataReader": {
+            "target": "Package",
+            "version": "[3.6.0, )"
+          },
+          "ExcelDataReader.DataSet": {
+            "target": "Package",
+            "version": "[3.6.0, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
